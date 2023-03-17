@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Start Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+<script>
+        function myFunction() {
+            var x = document.forms["numberForm"]["idTi"].value;
+            if (isNaN(x)) {
+                alert("Entrada invalida, Ingrese un numero");
+                return false;
+            }
+        }
+</script>
+
+<h1>Hello World!</h1>
+<form name="numberForm" action="http://localhost:8080/nServlet" method="get" >
+    <label for="idTi">Número:</label><br>
+    <input type="text" id="idTi" name="id" ><br><br>
+    <input type="submit" onclick="myFunction()" value="Buscar">
+</form>
+</body>
+</html>

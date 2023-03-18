@@ -27,6 +27,10 @@ usando la versión 1.0 de HTTP.
 
 Tomado de: https://plataforma.josedomingo.org/pledin/cursos/apache24/curso/u01/
 
+![](https://es.ryte.com/wiki/img_auth.php/2/2c/httpStatusCode_es.png)
+
+Tomado de: https://es.ryte.com/wiki/Códigos_de_Estado_Http
+
 4. Realice una nueva conexión con telnet, esta vez a:
 * Host: www.httpbin.org
 * Puerto: 80
@@ -94,7 +98,8 @@ I. Para esto, cree un proyecto maven nuevo usando el arquetipo de aplicación We
 ```
 1. Revise la clase SampleServlet incluida a continuacion, e identifique qué hace:
 
-*SERVLET* --> Estos pueden dar soporte al contenido dinámico de paginas web o lo que podria ser acceder a una base de datos , dando asi servicio a varios clientes al mismi tiempo y filtrar datos.
+*SERVLET : * dar soporte al contenido dinámico de páginas web, proporcionar acceso a bases de datos, dar servicio a varios clientes al mismo tiempo y filtrar datos.
+En el servidor de aplicaciones, las referencias a los servlets se centran en los servlets HTTP, que dan servicio a clientes basados en web.
 
 Referencia de : https://www.ibm.com/docs/es/was-nd/9.0.5?topic=applications-servlets
 

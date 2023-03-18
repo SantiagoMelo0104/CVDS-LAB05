@@ -351,14 +351,14 @@ a. Abra la aplicación en un explorador. Realice algunas pruebas con el juego e 
 b. Abra la aplicación en dos computadores diferentes. Si no dispone de uno, hágalo en dos navegadores diferentes (por ejemplo Chrome y Firefox;incluso se puede en un único navegador usando una ventana normal y una ventana de incógnito / privada). Haga cinco intentos en uno, y luego
 un intento en el otro. ¿Qué valor tiene cada uno?
 
-![](https://github.com/SantiagoMelo0104/CVDS-LAB05/blob/Master/pantallazos/4.0.png)
+![]()
 
 c. Aborte el proceso de Tomcat-runner haciendo Ctrl+C en la consola, y modifique el código del backing-bean de manera que use la anotación
 @SessionScoped en lugar de @ApplicationScoped. Reinicie la aplicación y repita el ejercicio anterior.
 ¿Coinciden los valores del premio?.Dado la anterior, ¿Cuál es la diferencia entre los backing-beans de sesión y los de aplicación?
 Data retention summary Get the mobile app
 
-![](https://github.com/SantiagoMelo0104/CVDS-LAB05/blob/Master/pantallazos/4.0.png)
+![](https://github.com/SantiagoMelo0104/CVDS-LAB05/blob/Master/pantallazos/4.4.png)
 
 d. Por medio de las herramientas de desarrollador del explorador (Usando la tecla "F12" en la mayoría de exploradores):
 - Ubique el código HTML generado por el servidor.
@@ -370,8 +370,8 @@ d. Por medio de las herramientas de desarrollador del explorador (Usando la tecl
 servidor sigue siendo la misma, ya que el contenido de los archivos allí almacenados no se ha modificado.
 - Revise qué otros cambios se pueden realizar y qué otra información se puede obtener de las herramientas de desarrollador.
 
-![](https://github.com/SantiagoMelo0104/CVDS-LAB05/blob/Master/pantallazos/4.4.png)
+![](https://github.com/SantiagoMelo0104/CVDS-LAB05/blob/Master/pantallazos/4.5.png)
 
 11. Para facilitar los intentos del usuario, se agregará una lista de los últimos intentos fallidos realizados:
 
-![](https://github.com/MPulidoM/CVDS_LAB05/blob/main/Imagenes/PARTE4.3.PNG)
+![](https://github.com/SantiagoMelo0104/CVDS-LAB05/blob/Master/pantallazos/4.3.png)

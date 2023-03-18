@@ -1,6 +1,6 @@
 # CVDS-LAB05
 ## MVC PRIMEFACES INTRODUCTION
-## **Integrantes:**
+## **Integrante:**
 - Santiago Naranjo Melo 
 ## *PARTE I. - JUGANDO A SER UN CLIENTE HTTP*
 1. Abra una terminal Linux o consola de comandos Windows.

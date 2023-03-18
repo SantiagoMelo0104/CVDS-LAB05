@@ -8,9 +8,9 @@
 * Host: www.escuelaing.edu.co
 * Puerto: 80
 Teniendo en cuenta los parámetros del comando telnet:
-
+```
   telnet HOST PORT 
-
+```
 3. Antes de que el servidor cierre la conexión por falta de comunicación:
 * Revise la página 36 del RFC del protocolo HTTP, sobre cómo realizar una petición GET. Con esto, solicite al servidor el recurso ‘sssss/abc.html’,
 usando la versión 1.0 de HTTP.
@@ -39,9 +39,9 @@ Ahora, solicite (GET) el recurso /html. ¿Qué se obtiene como resultado?
 
 5. Seleccione el contenido HTML de la respuesta y copielo al cortapapeles CTRL-SHIFT-C. Ejecute el comando wc (word count) para contar palabras con la
 opción -c para contar el número de caracteres:
-
+```
   wc -c
-
+```
 ![](https://github.com/SantiagoMelo0104/CVDS-LAB05/blob/Master/pantallazos/1.2.png)
 
 Pegue el contenido del portapapeles con CTRL-SHIFT-V y presione CTRL-D (fin de archivo de Linux). Si no termina el comando wc presione CTRL-D de nuevo. No presione mas de dos veces CTRL-D indica que se termino la entrada y puede cerrarle la terminal. Debe salir el resultado de la cantidad decaracteres que tiene el contenido HTML que respondió el servidor.
@@ -63,15 +63,18 @@ Claro está, las peticiones GET son insuficientes en muchos casos. Investigue: �
  Tomado de: https://platzi.com/clases/2053-introweb/32970-evolucion-del-protocolo-http/
 
 6. En la practica no se utiliza telnet para hacer peticiones a sitios web sino el comando curl con ayuda de la linea de comandos:
-
+```
   curl www.httpbin.org
-
+```
 ![](https://github.com/SantiagoMelo0104/CVDS-LAB05/blob/Master/pantallazos/1.3.png)
 
 Utilice ahora el parámetro -v y con el parámetro -i:
-
+```
   curl -v www.httpbin.org
+```
+```
   curl -i www.httpbin.org
+ ```
 
 ![](https://github.com/SantiagoMelo0104/CVDS-LAB05/blob/Master/pantallazos/1.4.png)
 
@@ -86,9 +89,9 @@ Utilice ahora el parámetro -v y con el parámetro -i:
 En este ejercicio, va a implementar una aplicación Web muy básica, haciendo uso de los elementos de más bajo nivel de Java-EE (Enterprise Edition), con el fin de revisar los conceptos del protocolo HTTP. En este caso, se trata de un módulo de consulta de clientes Web que hace uso de una librería de acceso a datos disponible en un repositorio Maven local.
 
 I. Para esto, cree un proyecto maven nuevo usando el arquetipo de aplicación Web estándar maven-archetype-webapp
-
+```
   mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-webapp -      DarchetypeVersion=1.4
-
+```
 1. Revise la clase SampleServlet incluida a continuacion, e identifique qué hace:
 
 *SERVLET* --> Estos pueden dar soporte al contenido dinámico de paginas web o lo que podria ser acceder a una base de datos , dando asi servicio a varios clientes al mismi tiempo y filtrar datos.
@@ -96,19 +99,21 @@ I. Para esto, cree un proyecto maven nuevo usando el arquetipo de aplicación We
 Referencia de : https://www.ibm.com/docs/es/was-nd/9.0.5?topic=applications-servlets
 
 2. Revise qué valor tiene el parámetro ‘urlPatterns’ de la anotación @WebServlet, pues este indica qué URLs atiende las peticiones el servlet.
-
+```
  "/helloServlet"
-
+```
 
 3. Revise en el pom.xml para qué puerto TCP/IP está configurado el servidor embebido de Tomcat (ver sección de plugins).
 
 El servidor se encuentra configurado para el puerto 8080
 
 4. Compile y ejecute la aplicación en el servidor embebido Tomcat, a través de Maven con:
-
+```
   mvn package
+```
+```
   mvn tomcat7:run
-
+```
 ![1](https://github.com/SantiagoMelo0104/CVDS-LAB05/blob/Master/pantallazos/2.0.png)
 
 
@@ -123,14 +128,14 @@ como host ‘localhost’, como puerto, el configurado en el pom.xml y el path d
 
 7. Busque el artefacto gson en el repositorio de maven y agregue la dependencia.
 
-
+```
   <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
 <dependency>
  <groupId>com.google.code.gson</groupId>
  <artifactId>gson</artifactId>
  <version>2.3.1</version>
 </dependency>
-
+```
 8. En el navegador revise la dirección https://jsonplaceholder.typicode.com/todos/1. Intente cambiando diferentes números al final del path de la url.
 
 * numero = 1
@@ -142,14 +147,14 @@ como host ‘localhost’, como puerto, el configurado en el pom.xml y el path d
 
 9. Basado en la respuesta que le da el servicio del punto anterior, cree la clase edu.eci.cvds.servlet.model.Todo con un constructor vacío y los métodos getter y setter para las propiedades de los "To Dos" que se encuentran en la url indicada.
 
-
+```
  Se encuentra en  edu.eci.servlet.model.Todo
-
+```
  10. Cree una clase que herede de la clase HttpServlet (similar a SampleServlet), y para la misma sobrescriba el método heredado doGet. Incluya la anotación @Override para verificar –en tiempo de compilación- que efectivamente se esté sobreescribiendo un método de las superclases.
  
-
+```
  Se encuentra en  edu.eci.servlet.NuevoServlet
-
+```
 11. Teniendo en cuenta las siguientes métodos disponibles en los objetos ServletRequest y ServletResponse recibidos por el método doGet:
 
 * response.setStatus(N); <- Indica con qué código de error N se generará la respuesta. Usar la clase HttpServletResponse para indicar el código de respuesta.
@@ -171,9 +176,9 @@ número entero.
 - Si no se paso parámetro opcional, o si el parámetro no contiene un número entero, devolver el código equivalente a requerimiento inválido.
 - Si se genera la excepcion MalformedURLException devolver el código de error interno en el servidor
 Para cualquier otra excepcion, devolver el código equivalente a requerimiento inválido.
-
+```
  Se encuentra en  edu.eci.servlet.model.Todo
-
+```
 12. Intente hacer diferentes consultas desde un navegador Web para probar las diferentes funcionalidades
 * Salida Valida
 ![8](https://github.com/SantiagoMelo0104/CVDS-LAB05/blob/Master/pantallazos/2.6.png)
@@ -188,7 +193,7 @@ Para cualquier otra excepcion, devolver el código equivalente a requerimiento i
 ## *PARTE III. - HACIENDO UNA APLICACIÓN WEB DINÁMICA A BAJO NIVEL.*
 1. En su servlet, sobreescriba el método doPost, y haga la misma implementación del doGet.
 2. Cree el archivo index.html en el directorio src/main/webapp/index.html de la siguiente manera:
-
+```
 <!DOCTYPE html>
 <html>
   <head>
@@ -199,7 +204,7 @@ Para cualquier otra excepcion, devolver el código equivalente a requerimiento i
     <h1>Hello World!</h1>
   </body>
 </html>
-
+```
 
 ![11](https://github.com/SantiagoMelo0104/CVDS-LAB05/blob/Master/pantallazos/3.0.png)
 
@@ -237,7 +242,7 @@ javax.servlet.jstl y Primefaces (en el archivo pom.xml).
 2. Para que configure automáticamente el descriptor de despliegue de la aplicación (archivo web.xml), de manera que el framework JSF se active al inicio
 de la aplicación, en el archivo web.xml agregue la siguiente configuración:
 
-
+```
 <servlet>
  <servlet-name>Faces Servlet</servlet-name>
  <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
@@ -250,7 +255,7 @@ de la aplicación, en el archivo web.xml agregue la siguiente configuración:
 <welcome-file-list>
  <welcome-file>faces/index.jsp</welcome-file>
 </welcome-file-list>
-
+```
 
 3. Revise cada una de las configuraciones agregadas anteriormente para saber qué hacen y por qué se necesitan. Elimine las que no se necesiten.
 
@@ -283,12 +288,12 @@ el estado del juego.
 espacios de nombres XML requiere una página de PrimeFaces y cuál es la estructura básica de la misma.
 
 6. Con base en lo anterior, agregue un formulario con identificador guess_form con el siguiente contenido básico:
-
+```
 <h:body>
   <h:form id="guess_form">
   </h:form>
 </h:body>
-
+```
 7. Al formulario, agregue:
 
 a. Un elemento de tipo <p:outputLabel> para el número que se debe adivinar, sin embargo, este elemento se debe ocultar. Para ocultarlo, se
@@ -305,9 +310,9 @@ e. Un elemento de tipo <p:outputLabel> para mostrar en cuanto va el premio.
 
 Y asocie dichos elementos al BackingBean de sesión a través de su propiedad value, y usando como referencia el nombre asignado:
 
-
+```
 value="#{guessBean.nombrePropiedad}"
-
+```
 
 8. Al formulario, agregue dos botones de tipo <p:commandButton>, uno para enviar el número ingresado y ver si se atinó, y otro para reiniciar el juego
 
@@ -317,25 +322,25 @@ descritos, de manera que al hacer clic, se ejecute un ciclo de JSF y se refresqu
 b. Debe tener también una propiedad actionListener con la cual se le indicará que, al hacer clic, se ejecutará el método guess, creado en el
 backing-bean de sesión:
 
-
+```
 <p:commandButton update="guess_form" actionListener="#{guessBean.guess}">...
-
+```
 
 c. El botón de reiniciar juego tendrá las mismas propiedades de update y actionListener del otro con el valor correspondiente:
 
-
+```
 <p:commandButton update="…" actionListener="…">
-
+```
 
 9. Para verificar el funcionamiento de la aplicación, agregue el plugin tomcat-runner dentro de los plugins de la fase de construcción (build). Tenga en
 cuenta que en la configuración del plugin se indica bajo que ruta quedará la aplicación:
 
-
+```
 mvn package
-
-
+```
+```
 mvn tomcat7:run
-
+```
 Si no hay errores, la aplicación debería quedar accesible en la URL: http://localhost:8080/faces/guess.xhtml
 
 ![](https://github.com/SantiagoMelo0104/CVDS-LAB05/blob/Master/pantallazos/4.0.png)
@@ -351,7 +356,7 @@ a. Abra la aplicación en un explorador. Realice algunas pruebas con el juego e 
 b. Abra la aplicación en dos computadores diferentes. Si no dispone de uno, hágalo en dos navegadores diferentes (por ejemplo Chrome y Firefox;incluso se puede en un único navegador usando una ventana normal y una ventana de incógnito / privada). Haga cinco intentos en uno, y luego
 un intento en el otro. ¿Qué valor tiene cada uno?
 
-![]()
+![](https://github.com/SantiagoMelo0104/CVDS-LAB05/blob/Master/pantallazos/navegadores.png)
 
 c. Aborte el proceso de Tomcat-runner haciendo Ctrl+C en la consola, y modifique el código del backing-bean de manera que use la anotación
 @SessionScoped en lugar de @ApplicationScoped. Reinicie la aplicación y repita el ejercicio anterior.

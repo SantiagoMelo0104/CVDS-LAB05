@@ -10,6 +10,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.List;
+
 public class Service {
     public static Todo getTodo(int id) throws MalformedURLException, IOException {
         URL urldemo = new URL("https://jsonplaceholder.typicode.com/todos/" + id);

@@ -13,6 +13,10 @@ import java.io.Writer;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.Optional;
+
+/**
+ * @author Santiago Naranjo Melo
+ */
 @WebServlet(
         urlPatterns = "/nServlet" // Url que quiere que sea del servidor
 )

@@ -1,8 +1,7 @@
 package edu.eci.cvds.servlet.model;
 
 /**
- * @author Iván Camilo Rincón Saavedra
- * @version
+ * @author Santiago Naranjo Melo
  */
 public class Todo {
     private int userId;
